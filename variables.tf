@@ -1,29 +1,27 @@
-variable "aws_region" {
-  type    = string
-  default = "ap-southeast-2"
+variable "debian_ami" {
+  description = "Default Debian ami for region Frankfurt"
+  type        = string
+  default     = "ami-0adb6517915458bdb"
 }
 
-variable "aws_personalize_campaign_name" {
-  type    = string
-  default = "my-personalize-campaign"
+variable "ip" {
+  description = "Authorized IP"
+  type        = string
+  default     = "0.0.0.0"
 }
 
-variable "aws_quicksight_account_name" {
-  type    = string
-  default = "my-quicksight-account"
+variable "public_key" {
+  description = "Public key"
+  type        = string
+  default     = "your_public_key"
 }
 
-variable "aws_neptune_db_instance_name" {
-  type    = string
-  default = "my-neptune-db-instance"
+variable "tags" {
+  description = "Default tags to apply to all resources."
+  type        = map(any)
+  default = {
+    archuuid = "aa655a4c-4df8-471f-ac56-01627cbd4379"
+    env      = "Development"
+  }
 }
 
-variable "aws_glue_job_name" {
-  type    = string
-  default = "my-glue-job"
-}
-
-variable "aws_s3_bucket_name" {
-  type    = string
-  default = "my-s3-bucket"
-}
